@@ -9,7 +9,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
         if(dish!=null){
           return (
             <Card className='col-12 col-md-5 m-1'>
-                <CardImg   top src={dish.image} alt={dish.name} />
+                <CardImg top src={dish.image} alt={dish.name} />
                 <CardBody>
                   <CardTitle>{dish.name}</CardTitle>
                   <CardText>{dish.description}</CardText>
@@ -62,7 +62,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
     }
 
     const  DishDetail = (props) => {
-        console.log('DishDetail component did render')   
+        console.log('DishDetail component did render')
         const dish = props.dish;
         if (dish == null) {
             return (<div></div>)
@@ -73,8 +73,6 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
                 <div className='row'>
                     <RenderDish dish={props.dish} />
                     <RenderComments comments={props.dish.comments} />
-                
-                    
                 </div>
             </div>
         )
