@@ -27,7 +27,7 @@ import { Card, CardImg, CardImgOverlay,
 
     return (
       <div className="container">
-        <div className="row">
+        <div className="row" >
               {menu}
         </div>
           
