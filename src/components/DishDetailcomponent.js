@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, Breadcrumb, BreadcrumbItem  } from 'reactstrap';
-    import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import CommentForm from './CommentFormComponent'
 
 
 
@@ -51,6 +52,7 @@ import { Card, CardImg, CardText, CardBody,
                 <ul className="list-unstyled">
                     {comment}
                 </ul>
+                <CommentForm ></CommentForm>
             </div>
         )
         }
