@@ -2,7 +2,8 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, Breadcrumb, BreadcrumbItem  } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import CommentForm from './CommentFormComponent'
+import CommentForm from './CommentFormComponent';
+import { Loading } from './LoadingComponent';
 
 
 
@@ -68,10 +69,26 @@ import CommentForm from './CommentFormComponent'
     const  DishDetail = (props) => {
         console.log('DishDetail component did render')
         const dish = props.dish;
-        if (dish == null) {
-            return (<div></div>)
+        if (props.isLoading) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <Loading />
+                    </div>
+                </div>
+            );
         }
-
+        else if (props.errMess) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            );
+        }
+        else if (props.dish != null) 
+        {
         return (
             <div className="container">
             <div className="row">
@@ -96,7 +113,11 @@ import CommentForm from './CommentFormComponent'
                 </div>
             </div>
             </div>
-        );
+        )
+        }
+        else {
+            return (<div></div>)
+        }
     }
 
 
