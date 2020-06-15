@@ -69,7 +69,7 @@ import { baseUrl } from '../shared/baseUrl';
 
     const  DishDetail = (props) => {
         console.log('DishDetail component did render')
-        const dish = props.dish;
+        // const dish = props.dish;
         if (props.isLoading) {
             return(
                 <div className="container">
